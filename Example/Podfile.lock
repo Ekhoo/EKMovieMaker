@@ -1,0 +1,17 @@
+PODS:
+  - EKMovieMaker (0.1.0)
+  - Kiwi (2.3.1)
+
+DEPENDENCIES:
+  - EKMovieMaker (from `../`)
+  - Kiwi
+
+EXTERNAL SOURCES:
+  EKMovieMaker:
+    :path: ../
+
+SPEC CHECKSUMS:
+  EKMovieMaker: d1ae3f9aca55f8baba426d16c71b9344c5123495
+  Kiwi: 73e1400209055ee9c8ba78c6012b6b642d0fb9f7
+
+COCOAPODS: 0.35.0

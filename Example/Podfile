@@ -1,0 +1,11 @@
+source 'https://github.com/CocoaPods/Specs.git'
+
+target 'EKMovieMaker', :exclusive => true do
+  pod "EKMovieMaker", :path => "../"
+end
+
+target 'Tests', :exclusive => true do
+  pod "EKMovieMaker", :path => "../"
+
+  pod 'Kiwi'
+end
