@@ -7,10 +7,13 @@
 //
 
 #import "EKViewController.h"
+#import "EKMovieMaker.h"
 
 @interface EKViewController ()
 
-@property(nonatomic, strong) UIScrollView *scrollView;
+@property(nonatomic, strong) UIScrollView           *scrollView;
+@property(nonatomic, strong, readonly) NSArray      *images;
+@property(nonatomic, strong, readonly) EKMovieMaker *movieMaker;
 
 @end
 
@@ -26,7 +29,7 @@
     /*** Navigation bar ***/
     self.navigationController.navigationBar.topItem.title = @"Demonstration";
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Convert"
-                                                                              style:UIBarButtonItemStylePlain target:nil action:nil];
+                                                                              style:UIBarButtonItemStylePlain target:self action:@selector(convertImages)];
     
     /*** Scroll view ***/
     self.scrollView                 = [[UIScrollView alloc] initWithFrame:self.view.frame];
@@ -35,20 +38,21 @@
     [self.view addSubview:self.scrollView];
     
     /*** Images ***/
-    NSArray *images = @[
-                        [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"image1.jpg"]],
-                        [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"image2.jpg"]],
-                        [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"image3.jpg"]],
-                        [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"image4.jpg"]],
-                        [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"image5.jpg"]]
-                        ];
+    self->_images = @[
+                      [UIImage imageNamed:@"image1.jpg"],
+                      [UIImage imageNamed:@"image2.jpg"],
+                      [UIImage imageNamed:@"image3.jpg"],
+                      [UIImage imageNamed:@"image4.jpg"],
+                      [UIImage imageNamed:@"image5.jpg"]
+                      ];
     
     CGFloat imageHeight     = 100.0f;
     CGFloat separatorHeight = 4.0f;
     CGFloat currentY        = separatorHeight;
     
-    for (UIImageView *imageView in images) {
+    for (UIImage *image in self.images) {
         /*** ImageView ***/
+        UIImageView *imageView  = [[UIImageView alloc] initWithImage:image];
         imageView.frame         = CGRectMake(0.0f, currentY, screenBounds.size.width, imageHeight);
         imageView.contentMode   = UIViewContentModeScaleAspectFill;
         imageView.clipsToBounds = YES;
@@ -63,6 +67,15 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    self->_movieMaker               = [[EKMovieMaker alloc] initWithImages:self.images];
+    self.movieMaker.movieSize       = CGSizeMake(400.0f, 200.0f);
+    self.movieMaker.framesPerSecond = 60.0f;
+    self.movieMaker.frameDuration   = 3.0f;
+}
+
+- (void)convertImages {
+    [self.movieMaker createMovieWithCompletion:nil];
 }
 
 - (void)didReceiveMemoryWarning {
