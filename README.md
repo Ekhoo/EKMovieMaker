@@ -4,7 +4,7 @@
 [![License](https://img.shields.io/cocoapods/l/EKMovieMaker.svg?style=flat)](http://cocoapods.org/pods/EKMovieMaker)
 [![Platform](https://img.shields.io/cocoapods/p/EKMovieMaker.svg?style=flat)](http://cocoapods.org/pods/EKMovieMaker)
 
-Lite tool which convert an array of UImage into a movie, written in Objective-C.
+Light tool which convert an array of UIImage into a movie, written in Objective-C.
 
 ### Demonstration
 
@@ -43,7 +43,7 @@ pod "EKMovieMaker", '~> 0.0.1'
                       [UIImage imageNamed:@"image5.jpg"]
                       ];
                       
-    EKMovieMaker movieMaker    = [[EKMovieMaker alloc] initWithImages:self.images];
+    EKMovieMaker movieMaker    = [[EKMovieMaker alloc] initWithImages:images];
     movieMaker.movieSize       = CGSizeMake(400.0f, 200.0f);
     movieMaker.framesPerSecond = 60.0f;
     movieMaker.frameDuration   = 3.0f;
