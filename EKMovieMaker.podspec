@@ -10,8 +10,8 @@
 Pod::Spec.new do |s|
   s.name             = "EKMovieMaker"
   s.version          = "0.0.1"
-  s.summary          = "Convert an array of UIImage array into a movie."
-  s.description      = "Lite tool which convert an array of UIImage into a movie, written in Objective-C."
+  s.summary          = "Convert an array of UIImage into a movie."
+  s.description      = "Light tool which convert an array of UIImage into a movie, written in Objective-C."
   s.homepage         = "https://github.com/Ekhoo/EKMovieMaker"
   s.license          = 'MIT'
   s.author           = { "Ekhoo" => "me@lucas-ortis.com" }
