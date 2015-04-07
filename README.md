@@ -47,6 +47,10 @@ pod "EKMovieMaker", '~> 0.0.1'
     movieMaker.movieSize       = CGSizeMake(400.0f, 200.0f);
     movieMaker.framesPerSecond = 60.0f;
     movieMaker.frameDuration   = 3.0f;
+    
+    [movieMaker createMovieWithCompletion:^(NSString *moviePath) {
+      NSLog(@"Movie path => %@", moviePath);
+    }];
 }
 ```
 
