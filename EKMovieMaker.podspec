@@ -9,30 +9,19 @@
 
 Pod::Spec.new do |s|
   s.name             = "EKMovieMaker"
-  s.version          = "0.1.0"
-  s.summary          = "A short description of EKMovieMaker."
-  s.description      = <<-DESC
-                       An optional longer description of EKMovieMaker
-
-                       * Markdown format.
-                       * Don't worry about the indent, we strip it!
-                       DESC
-  s.homepage         = "https://github.com/<GITHUB_USERNAME>/EKMovieMaker"
-  # s.screenshots     = "www.example.com/screenshots_1", "www.example.com/screenshots_2"
+  s.version          = "0.0.1"
+  s.summary          = "Convert an array of UIImage array into a movie."
+  s.description      = "Lite tool which convert an array of UIImage into a movie, written in Objective-C."
+  s.homepage         = "https://github.com/Ekhoo/EKMovieMaker"
   s.license          = 'MIT'
   s.author           = { "Ekhoo" => "me@lucas-ortis.com" }
-  s.source           = { :git => "https://github.com/<GITHUB_USERNAME>/EKMovieMaker.git", :tag => s.version.to_s }
-  # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
-
-  s.platform     = :ios, '7.0'
-  s.requires_arc = true
+  s.source           = { :git => "https://github.com/Ekhoo/EKMovieMaker.git", :tag => s.version.to_s }
+  s.platform         = :ios, '6.0'
+  s.requires_arc     = true
 
   s.source_files = 'Pod/Classes/**/*'
   s.resource_bundles = {
     'EKMovieMaker' => ['Pod/Assets/*.png']
   }
 
-  # s.public_header_files = 'Pod/Classes/**/*.h'
-  # s.frameworks = 'UIKit', 'MapKit'
-  # s.dependency 'AFNetworking', '~> 2.3'
 end
