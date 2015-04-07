@@ -4,7 +4,7 @@
 [![License](https://img.shields.io/cocoapods/l/EKMovieMaker.svg?style=flat)](http://cocoapods.org/pods/EKMovieMaker)
 [![Platform](https://img.shields.io/cocoapods/p/EKMovieMaker.svg?style=flat)](http://cocoapods.org/pods/EKMovieMaker)
 
-Lite tool which convert an array of UImage into a movie, written in Objective-C.
+Lite tool which convert an array of UIImage into a movie, written in Objective-C.
 
 ### Demonstration
 
