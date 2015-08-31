@@ -125,6 +125,7 @@ static NSString * const kVideoOutputFile = @"movie.mp4";
             NSLog(@"error appending image %d times %d\n, with error.", frameCount, j);
         }
         
+        CVBufferRelease(buffer);
         frameCount++;
     }
     
